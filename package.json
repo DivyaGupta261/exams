@@ -12,6 +12,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "moment": "^2.22.2",
+    "moment-timezone": "^0.5.23",
     "nedb": "^1.8.0"
   },
   "devDependencies": {

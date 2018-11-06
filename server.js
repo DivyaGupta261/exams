@@ -179,7 +179,9 @@ app.post('/', function(req, res) {
 
  function getNextExam(exams) {
    let now = new Date();
-   return exams.find( e => new Date(e.date).getTime() > now.getTime());
+   let format = 'YYYY/MM/DD HH:mm:ss ZZ';
+   let indianTime = moment(now, format).tz('Indian/Mauritius').format(format);
+   return exams.find( e => new Date(e.date).getTime() > indianTime.getTime());
  }
 
  function getText(exam) {
