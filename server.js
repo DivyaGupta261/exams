@@ -150,6 +150,15 @@ app.post('/', function(req, res) {
       sendNextExamData(res, obj);
       // break;
       return;
+    case 'Date-Exam':
+      let date = getRequestDate(req);
+      if (!date) {
+        sendErrorMessage(res, obj);
+      }
+      sendExamOnDate(res, obj, date);
+      // break;
+      return;
+
 
     default:
 
@@ -174,6 +183,38 @@ app.post('/', function(req, res) {
    });
  }
 
+ function sendExamOnDate(res, obj, date) {
+   let examsDb = getAllExams();
+   examsDb.exec(function(err, exams) {
+     if (err) res.send(err);
+     let exams = getExamsOnDate(exams, date);
+     let text = getExamsText(exams, date);
+     obj.fulfillmentText = text;
+     res.json(obj);
+   });
+ }
+
+ function getExamsOnDate(exams, date) {
+   let date = date.getDate();
+   let month = date.getMonth();
+   let year = date.getFullYear();
+   return exams.filter( e => {
+     let examDate = new Date(e.date);
+     return examDate.getDate() == date && examDate.getMonth() == month && examDate.getFullYear() == year;
+   });
+ }
+
+ function sendErrorMessage(res, obj) {
+   obj.fulfillmentText = "I'm sorry. I can't find that";
+   res.json(obj);
+ }
+
+ function getRequestDate(req) {
+   if (req.body.queryResult.parameters.date) {
+     return new Date(req.body.queryResult.parameters.date);
+   }
+ }
+
  function getAllExams() {
    return db.find({}).sort({
      updatedAt: -1
@@ -191,6 +232,24 @@ app.post('/', function(req, res) {
    let dateText = moment(date).calendar();
    let text = `The next exam is on ${dateText}. The subject is ${exam.subject}`;
    return text;
+ }
+
+ function getExamsText(exams, date) {
+   let dateText = moment(date).calendar();
+   if (exams.length == 0) {
+     let initial = `There is no exams on ${dateText}. Enjoy`;
+     return initial;
+   }
+   if (exams.length == 1) {
+     let initial = `There is 1 exam on ${dateText}.`;
+     let subjects = exams.map(e => e.subject)
+     let subjectText = `The subject is ${subjects[0]}`;
+     return initial + subjectText;
+   }
+   let initial = `There are ${exams.length} exams on ${dateText}.`;
+   let subjects = exams.map(e => e.subject)
+   let subjectText = `The subjects are ${subjects.join(',')}`;
+   return initial + subjectText;
  }
 
 
