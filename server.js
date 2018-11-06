@@ -102,10 +102,10 @@ var exams = [
 ];
 
 // Save this exam to the database.
-db.insert(exams, function(err, newexam) {
-  if (err) console.log(err);
-  console.log(newexam);
-});
+// db.insert(exams, function(err, newexam) {
+//   if (err) console.log(err);
+//   console.log(newexam);
+// });
 
 // ROUTES
 // ===============================================
