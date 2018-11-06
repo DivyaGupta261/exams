@@ -163,6 +163,10 @@ app.post('/', function(req, res) {
       // break;
       return;
 
+    case 'Days-more':
+      sendExamsRemaining(res, obj);
+      return;
+
 
 
 
@@ -201,6 +205,17 @@ app.post('/', function(req, res) {
 
  }
 
+ function sendExamsRemaining(res, obj) {
+   let examsDb = getAllExams();
+   examsDb.exec(function(err, exams) {
+     if (err) res.send(err);
+     exams = getRemainingExamsData(exams);
+     let text = getRemainingExamsText(exams);
+     obj.fulfillmentText = text;
+     res.json(obj);
+   });
+ }
+
  function sendExamOnDate(res, obj, date) {
    let examsDb = getAllExams();
    examsDb.exec(function(err, exams) {
@@ -220,6 +235,12 @@ app.post('/', function(req, res) {
      let examDate = new Date(e.date);
      return examDate.getDate() == day && examDate.getMonth() == month && examDate.getFullYear() == year;
    });
+ }
+
+ function getRemainingExamsData() {
+   let now = new Date();
+   exams.sort((a, b) => a.date.getTime() - b.date.getTime());
+   return exams.filter( e => new Date(e.date).getTime() > now.getTime());
  }
 
  function sendErrorMessage(res, obj) {
@@ -287,6 +308,32 @@ app.post('/', function(req, res) {
    let subjects = exams.map(e => e.subject)
    let subjectText = `The subjects are ${subjects.join(',')}`;
    return initial + subjectText;
+ }
+
+ function getRemainingExamsText(exams) {
+   if (exams.length == 0) {
+     let initial = `There is no exam remaining. Happy holidays`;
+     return initial;
+   }
+   if (exams.length == 1) {
+     let initial = `There is only 1 exam remaining. `;
+     let subjects = exams.map(e => e.subject)
+     let subjectText = `The subject is ${subjects[0]}`;
+     return initial + subjectText;
+   }
+   let initial = `There are ${exams.length} exams more.`;
+   let lastExam = getLastExam(exams);
+   let lastDate = new Date(lastExam.date);
+   let dateText = moment(lastDate).calendar();
+
+   let a = moment(lastDate);
+   let b = moment();
+   let diff = a.diff(b, 'days');
+
+   let lastExamText = `The last exam is on ${dateText}. ${diff} days more.`
+
+   return initial + lastExamText;
+
  }
 
 
