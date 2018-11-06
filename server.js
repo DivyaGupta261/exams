@@ -105,10 +105,10 @@ var exams = [
 ];
 
 // Save this exam to the database.
-db.insert(exams, function(err, newexam) {
-  if (err) console.log(err);
-  console.log(newexam);
-});
+// db.insert(exams, function(err, newexam) {
+//   if (err) console.log(err);
+//   console.log(newexam);
+// });
 
 // ROUTES
 // ===============================================
@@ -182,9 +182,9 @@ app.post('/', function(req, res) {
 
  function getNextExam(exams) {
    let now = new Date();
-   exams.sort((a, b) => {
-     a.date.getTime() - b.date.getTime();
-   });
+   // exams.sort((a, b) => {
+   //   a.date.getTime() - b.date.getTime();
+   // });
    return exams.find( e => new Date(e.date).getTime() > now.getTime());
  }
 

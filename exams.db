@@ -1,15 +1,15 @@
-{"subject":"OBJECT ORIENTED PROGRAMMING AND DATA STRUCTURES","semester":3,"date":{"$$date":1541665800000},"_id":"9LKisB4csI5GEgPa","createdAt":{"$$date":1541521018876},"updatedAt":{"$$date":1541521018876}}
-{"subject":"SATELLITE COMMUNICATION","semester":7,"date":{"$$date":1541737800000},"_id":"WWfZyvrzdjRK02Uk","createdAt":{"$$date":1541521018877},"updatedAt":{"$$date":1541521018877}}
-{"subject":"PRINCIPLES OF DIGITAL SIGNAL PROCESSING","semester":5,"date":{"$$date":1541824200000},"_id":"6obTY1kmXvk8xGTC","createdAt":{"$$date":1541521018877},"updatedAt":{"$$date":1541521018877}}
-{"subject":"ELECTRO MAGNETIC INTERFERENCE AND COMPATIBILITY","semester":7,"date":{"$$date":1541997000000},"_id":"olLUkdygZvofUYeS","createdAt":{"$$date":1541521018877},"updatedAt":{"$$date":1541521018877}}
-{"subject":"COMPUTER ARCHITECTURE","semester":6,"date":{"$$date":1542169800000},"_id":"x907waSDoEzrNNnE","createdAt":{"$$date":1541521018877},"updatedAt":{"$$date":1541521018877}}
-{"subject":"EMBEDDED AND REAL TIME SYSTEMS","semester":7,"date":{"$$date":1542256200000},"_id":"5RvwS1WX1rxoRp3T","createdAt":{"$$date":1541521018877},"updatedAt":{"$$date":1541521018877}}
-{"subject":"CONTROL SYSTEM ENGINEERING","semester":4,"date":{"$$date":1542357000000},"_id":"XH0hN5zNqvJLHJIb","createdAt":{"$$date":1541521018877},"updatedAt":{"$$date":1541521018877}}
-{"subject":"ELECTRONIC CIRCUITS 2","semester":4,"date":{"$$date":1542616200000},"_id":"6ZlYOfWeMWoVQpeU","createdAt":{"$$date":1541521018877},"updatedAt":{"$$date":1541521018877}}
-{"subject":"RF AND MICROWAVE ENGINEERING","semester":7,"date":{"$$date":1542601800000},"_id":"2NYRuprSutDYAECN","createdAt":{"$$date":1541521018877},"updatedAt":{"$$date":1541521018877}}
-{"subject":"DIGITAL COMMUNICATION","semester":5,"date":{"$$date":1542688200000},"_id":"B4zQbgB1U37jF5PL","createdAt":{"$$date":1541521018877},"updatedAt":{"$$date":1541521018877}}
-{"subject":"ELECTRICAL ENGINEERING AND INSTRUMENTATION","semester":3,"date":{"$$date":1542702600000},"_id":"Uq9IlRUksSkzJF1m","createdAt":{"$$date":1541521018877},"updatedAt":{"$$date":1541521018877}}
-{"subject":"OPTICAL COMMUNICATION AND NETWORKS","semester":7,"date":{"$$date":1542947400000},"_id":"AdY0MBxxuApOZnZd","createdAt":{"$$date":1541521018877},"updatedAt":{"$$date":1541521018877}}
-{"subject":"COMMUNICATION THEORY","semester":4,"date":{"$$date":1543048200000},"_id":"py3OskHJKulVRe1l","createdAt":{"$$date":1541521018877},"updatedAt":{"$$date":1541521018877}}
-{"subject":"TRANSMISSION LINES AND WAVE GUIDES","semester":5,"date":{"$$date":1543465800000},"_id":"r1GUHHNh0UF8IguH","createdAt":{"$$date":1541521018877},"updatedAt":{"$$date":1541521018877}}
-{"subject":"ELECTROMAGNETIC FIELDS","semester":4,"date":{"$$date":1543638600000},"_id":"XquEgNMnWBbZjbkg","createdAt":{"$$date":1541521018877},"updatedAt":{"$$date":1541521018877}}
+{"subject":"OBJECT ORIENTED PROGRAMMING AND DATA STRUCTURES","semester":3,"date":{"$$date":1541665800000},"_id":"hgCT9zPD5JGbQIui","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
+{"subject":"SATELLITE COMMUNICATION","semester":7,"date":{"$$date":1541737800000},"_id":"s42Cw6oORAHQ7xQs","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
+{"subject":"PRINCIPLES OF DIGITAL SIGNAL PROCESSING","semester":5,"date":{"$$date":1541824200000},"_id":"VamRodlg1rOXZXEB","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
+{"subject":"ELECTRO MAGNETIC INTERFERENCE AND COMPATIBILITY","semester":7,"date":{"$$date":1541997000000},"_id":"uJXxHCNCTWdFvDmq","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
+{"subject":"COMPUTER ARCHITECTURE","semester":6,"date":{"$$date":1542169800000},"_id":"68csedG8F93c3eKg","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
+{"subject":"EMBEDDED AND REAL TIME SYSTEMS","semester":7,"date":{"$$date":1542256200000},"_id":"FMGehD6seOOC9NHE","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
+{"subject":"CONTROL SYSTEM ENGINEERING","semester":4,"date":{"$$date":1542357000000},"_id":"s6vO5hQoov5c5znz","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
+{"subject":"ELECTRONIC CIRCUITS 2","semester":4,"date":{"$$date":1542616200000},"_id":"ssljBkjmiiKurXWw","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
+{"subject":"RF AND MICROWAVE ENGINEERING","semester":7,"date":{"$$date":1542601800000},"_id":"YNvIo7AjDpXE9nQ8","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
+{"subject":"DIGITAL COMMUNICATION","semester":5,"date":{"$$date":1542688200000},"_id":"95oeUhIz798h4Ayu","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
+{"subject":"ELECTRICAL ENGINEERING AND INSTRUMENTATION","semester":3,"date":{"$$date":1542702600000},"_id":"TAE6UMDqVTwVmKOm","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
+{"subject":"OPTICAL COMMUNICATION AND NETWORKS","semester":7,"date":{"$$date":1542947400000},"_id":"BQDPiLxkW6hWl9Yu","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
+{"subject":"COMMUNICATION THEORY","semester":4,"date":{"$$date":1543048200000},"_id":"3WW8brJxsNCbcZkw","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
+{"subject":"TRANSMISSION LINES AND WAVE GUIDES","semester":5,"date":{"$$date":1543465800000},"_id":"eiK4Hjt4kTy5haXW","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
+{"subject":"ELECTROMAGNETIC FIELDS","semester":4,"date":{"$$date":1543638600000},"_id":"LDlzaGsgTSyhvdjm","createdAt":{"$$date":1541521191114},"updatedAt":{"$$date":1541521191114}}
