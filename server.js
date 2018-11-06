@@ -9,6 +9,9 @@ var express = require('express'),
   bodyParser = require('body-parser'), // Middleware to read POST data
   moment = require('moment');
 
+
+// const moment = require('moment-timezone');
+
 // DATABASE
 // ===============================================
 
@@ -179,9 +182,7 @@ app.post('/', function(req, res) {
 
  function getNextExam(exams) {
    let now = new Date();
-   let format = 'YYYY/MM/DD HH:mm:ss ZZ';
-   let indianTime = moment(now, format).tz('Indian/Mauritius').format(format);
-   return exams.find( e => new Date(e.date).getTime() > indianTime.getTime());
+   return exams.find( e => new Date(e.date).getTime() > now.getTime());
  }
 
  function getText(exam) {
