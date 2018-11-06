@@ -158,6 +158,12 @@ app.post('/', function(req, res) {
       sendExamOnDate(res, obj, date);
       // break;
       return;
+    case 'Exam-ending':
+      sendLastExamData(res, obj);
+      // break;
+      return;
+
+
 
 
     default:
@@ -183,11 +189,23 @@ app.post('/', function(req, res) {
    });
  }
 
+ function sendLastExamData(res, obj) {
+   let examsDb = getAllExams();
+   examsDb.exec(function(err, exams) {
+     if (err) res.send(err);
+     let exam = getLastExam(exams);
+     let text = getLastExamText(exam);
+     obj.fulfillmentText = text;
+     res.json(obj);
+   });
+
+ }
+
  function sendExamOnDate(res, obj, date) {
    let examsDb = getAllExams();
    examsDb.exec(function(err, exams) {
      if (err) res.send(err);
-     let exams = getExamsOnDate(exams, date);
+     exams = getExamsOnDate(exams, date);
      let text = getExamsText(exams, date);
      obj.fulfillmentText = text;
      res.json(obj);
@@ -195,12 +213,12 @@ app.post('/', function(req, res) {
  }
 
  function getExamsOnDate(exams, date) {
-   let date = date.getDate();
+   let day = date.getDate();
    let month = date.getMonth();
    let year = date.getFullYear();
    return exams.filter( e => {
      let examDate = new Date(e.date);
-     return examDate.getDate() == date && examDate.getMonth() == month && examDate.getFullYear() == year;
+     return examDate.getDate() == day && examDate.getMonth() == month && examDate.getFullYear() == year;
    });
  }
 
@@ -227,6 +245,12 @@ app.post('/', function(req, res) {
    return exams.find( e => new Date(e.date).getTime() > now.getTime());
  }
 
+ function getLastExam(exams) {
+   let now = new Date();
+   exams.sort((a, b) => b.date.getTime() - a.date.getTime());
+   return exams[0];
+ }
+
  function getText(exam) {
    let date = new Date(exam.date);
    let dateText = moment(date).calendar();
@@ -234,10 +258,23 @@ app.post('/', function(req, res) {
    return text;
  }
 
+ function getLastExamText(exam) {
+   let date = new Date(exam.date);
+   let dateText = moment(date).calendar();
+
+   let a = moment(date);
+   let b = moment();
+   let diff = a.diff(b, 'days');
+
+   let text = `The last exam is on ${dateText}. The subject is ${exam.subject}.
+   ${diff} days more.`;
+   return text;
+ }
+
  function getExamsText(exams, date) {
    let dateText = moment(date).calendar();
    if (exams.length == 0) {
-     let initial = `There is no exams on ${dateText}. Enjoy`;
+     let initial = `There is no exam on ${dateText}. Enjoy`;
      return initial;
    }
    if (exams.length == 1) {
