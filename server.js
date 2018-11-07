@@ -281,7 +281,7 @@ app.post('/', function(req, res) {
 
  function getLastExamText(exam) {
    let date = new Date(exam.date);
-   let dateText = moment(date).format('DD/MM/YYYY');
+   let dateText = moment(date).format('MMMM Do YYYY');
 
    console.log(date, dateText);
 
